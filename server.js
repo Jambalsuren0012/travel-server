@@ -45,6 +45,17 @@ server.get("/:id", async (req, res) => {
     res.status(200).json({message:"Amjilttai", result});
   });
 });
+server.put("/:id", async (req, res) => {
+  const { id } = req.params;
+  sql.connect(function(err) {
+    if (err) throw err;
+    var sql = "UPDATE azure_user SET name = 'Canyon 123' WHERE ovog = 'Valley 345'";
+    con.query(sql, function (err, result) {
+      if (err) throw err;
+      console.log(result.affectedRows + " record(s) updated");
+    });
+  });
+  });
 
 
 server.listen(port, () => {
